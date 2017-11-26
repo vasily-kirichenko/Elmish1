@@ -10,9 +10,9 @@ open Fulma.Elements
 
 let root model dispatch =
   div []
-    [ Button.button_btn [ Button.isSuccess; Button.isOutlined ] [ str "I'm static" ]
+    [ Button.button_a [ Button.isSuccess; Button.isOutlined ] [ str "I'm static" ]
       str " "
-      Button.button_btn
+      Button.button_a
         [ Button.isOutlined
           (match model with On -> Button.isSuccess | Off -> Button.isDanger)
           Button.onClick (fun _ ->

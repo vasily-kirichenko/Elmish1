@@ -1,8 +1,14 @@
 module Counter.Types
 
-type Model = int
+type Good =
+    { message: string }
+
+type Model =
+    | Good of Good
+    | Error of string
 
 type Msg =
-  | Increment
-  | Decrement
-  | Reset
+    | GetGood
+    | GotGood of Good
+    | GetError
+    | GotError of string
