@@ -134,14 +134,12 @@ let data =
     }
 
 let root model dispatch =
-  div [ Class "vizceral-container" ] [
-      div [ Style [ Width "600px"; Height "400px" ]] // Position "absolute"; Top "0px"; Right "0px"; Bottom "0px"; Left "0px" ]]
-          [
-            vizceral
-              [ Vizceral.Traffic data
-                Vizceral.View [||]
-                Vizceral.Modes { detailedNode = "volume" }
-              ]
-              []
-          ]
-      ]
+  div
+    [ Class "vizceral-container" ]
+    [ vizceral
+        [ Vizceral.Traffic data
+          Vizceral.View [||]
+          Vizceral.Modes { detailedNode = "volume" }
+        ]
+        []
+    ]
