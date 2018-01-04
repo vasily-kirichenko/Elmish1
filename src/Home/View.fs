@@ -4,9 +4,13 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
+open Fable.Import
 open Types
 open Fulma
 open Fulma.Elements
+
+//[<Import("edit", "../../node_modules/ace-code-editor/lib/ace/ace.js")>]
+//let aceEdit : string -> obj = jsNative
 
 let root model dispatch =
   div []
@@ -19,4 +23,5 @@ let root model dispatch =
             let desiredState = match model with On -> Off | Off -> On
             dispatch (SwitchTo desiredState)) ]
         [ str (match model with On -> "off" | Off -> "on") ]
+      Button.button_a [ Button.onClick (fun _ -> Browser.location.reload(true) ) ] [ str "Reload!" ]
     ]

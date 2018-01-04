@@ -1,8 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\node_modules\fable-import-d3\Fable.Import.D3.fs">
+      <Link>Fable.Import.D3.fs</Link>
+    </Compile>
     <!-- Global to the app -->
     <Compile Include="Global.fs" />
     <!-- Info -->
@@ -21,6 +24,12 @@
     <Compile Include="Types.fs" />
     <Compile Include="State.fs" />
     <Compile Include="App.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\webpack.config.js">
+      <Link>webpack.config.js</Link>
+    </Content>
+    <Content Include="paket.references" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

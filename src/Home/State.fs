@@ -10,10 +10,11 @@ let update msg model : Model * Cmd<Msg> =
   match msg with
   | SwitchTo state ->
       model,
-      Cmd.ofPromise
-        (fun () -> Promise.sleep 1000)
-        ()
-        (fun () -> Switched state)
-        (fun _ -> Switched state)
+      []
+//      Cmd.ofPromise
+//        (fun () -> Promise.sleep 1000)
+//        ()
+//        (fun () -> Switched state)
+//        (fun _ -> Switched state)
   | Switched state ->
       state, []

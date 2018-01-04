@@ -1,14 +1,13 @@
 module Counter.Types
 
-type Good =
-    { message: string }
+open Fable.Core
+
+[<Pojo>]
+type Data =
+    { x: float; y: float }
 
 type Model =
-    | Good of Good
-    | Error of string
+    { Data: Data list
+      LastX: int }
 
-type Msg =
-    | GetGood
-    | GotGood of Good
-    | GetError
-    | GotError of string
+type Msg = GetData

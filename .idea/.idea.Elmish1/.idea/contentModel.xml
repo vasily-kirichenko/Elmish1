@@ -3,8 +3,12 @@
   <component name="ContentModelStore">
     <e p="C:\Users\vaski\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Elmish1.-743938120.00" t="ExcludeRecursive" />
     <e p="E:\github\Elmish1" t="IncludeFlat">
+      <e p=".paket" t="Include" />
       <e p="Elmish1.sln" t="IncludeFlat" />
+      <e p="node_modules\fable-import-d3\Fable.Import.D3.fs" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="paket.dependencies" t="Include" />
+      <e p="paket.lock" t="Include" />
       <e p="src" t="IncludeRecursive">
         <e p="App.fs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -27,9 +31,11 @@
           <e p="View.fs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="paket.references" t="Include" />
         <e p="State.fs" t="Include" />
         <e p="Types.fs" t="Include" />
       </e>
+      <e p="webpack.config.js" t="Include" />
     </e>
   </component>
 </project>

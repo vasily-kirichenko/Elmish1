@@ -5,6 +5,8 @@ Fable.Elmish.Browser
 Fable.Elmish.Debugger
 Fable.Elmish.HMR
 Fable.PowerPack
+Fable.Recharts
 dotnet-fable
 Fulma
 Fulma.Extensions
+Fable.Aether

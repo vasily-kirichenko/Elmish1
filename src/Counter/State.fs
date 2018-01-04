@@ -5,39 +5,24 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Types
 open Fable.PowerPack
-open Fable.PowerPack.Fetch
+open System
 
 let init () : Model * Cmd<Msg> =
-  Error "nothing yet", []
+    let rnd = Random()
+    { Data = [ for x in 0..100 -> { x = float x; y = float (rnd.Next 1000) } ]
+      LastX = 100 },
+    Cmd.ofMsg GetData
 
-let update msg (model: Model) =
-    match msg with
-    | GetGood ->
-        model,
-        Cmd.ofPromise
-            (fun () ->
-                promise {
-                    let! resp = fetch "http://localhost:3000/good"
-                                      [ RequestProperties.Method HttpMethod.GET
-                                        requestHeaders [ContentType "application/json" ]]
-                    let! text = resp.text()
-                    return ofJson<Good> text
-                })
-            ()
-            (fun good -> GotGood good)
-            (fun e -> GotError e.Message)
-    | GotGood good ->
-        Model.Good good, []
-    | GetError ->
-        model,
-        Cmd.ofPromise
-            (fun () ->
-                promise {
-                    let! resp = fetch "http://localhost:3000/error" []
-                    return! resp.text()
-                })
-            ()
-            GotError
-            (fun e -> GotError e.Message)
-    | GotError error ->
-        Model.Error error, []
+let update msg (model: Model) = model, []
+//    match msg with
+//    | GetData ->
+//        let rnd = Random()
+//        let data =
+//            [ yield! List.tail model.Data
+//              yield { x = float (model.LastX + 1); y = float (rnd.Next 1000) } ]
+//
+//        { model with LastX = model.LastX + 1; Data = data },
+//        Cmd.ofPromise
+//            (fun () -> Promise.sleep 1000) ()
+//            (fun () -> Msg.GetData)
+//            (fun _ -> Msg.GetData)
