@@ -55,7 +55,7 @@ type Node =
       name: string
       maxVolume: int
       ``class``: string
-      //updated: int64
+      updated: float
       nodes: Node[]
       connections: Connection[] }
 
@@ -82,34 +82,34 @@ let data =
     { renderer = "global"
       name = "edge"
       maxVolume = 0
-//      updated = 0L
+      updated = 0.
       ``class`` = "normal"
       nodes =
         [| { renderer = "region"
              name = "INTERNET"
              ``class`` = "normal"
              maxVolume = 0
-//             updated = 0L
+             updated = 0.
              nodes = [||]
              connections = [||] }
            { renderer = "region"
              name = "us-east-1"
              maxVolume = 50000
              ``class`` = "normal"
-//             updated = 1466838546805L
+             updated = 1466838546805.
              nodes =
                [| { name = "INTERNET"
                     renderer = "focusedChild"
                     ``class`` = "normal"
                     maxVolume = 0
-//                    updated = 0L
+                    updated = 0.
                     nodes = [||]
                     connections = [||]}
                   { name = "proxy-prod"
                     renderer = "focusedChild"
                     ``class`` = "normal"
                     maxVolume = 0
-//                    updated = 0L
+                    updated = 0.
                     nodes = [||]
                     connections = [||] }
                |]
